@@ -246,7 +246,7 @@ body,#root {
 }
 
 .Games > div{
-  background-color: #ff7676;
+  /* background-color: #ff7676; */
   margin: 5%;
 }
 
@@ -268,7 +268,64 @@ body,#root {
   justify-content: center;
   align-items: center;
 }
+.basketBallContainer{
+  min-height: 32%;
+}
 .scoreDisplay{
   font-size: var(--font-size);
   border: 2px dotted rgba(0, 0, 0, 0.8);
+}
+
+.move{
+  animation: move 5s linear infinite;
+}
+
+@keyframes move{
+  0%{
+    transform: translatex(0%);
+  }
+  25%{
+    transform: translatex(-120%);
+  }
+  50%{
+    transform: translatex(0%);
+  }
+  75%{
+    transform: translatex(120%);
+  }
+  100%{
+    transform: translatex(0%);
+  }
+}
+
+.shoot{
+  animation: shoot 1.5s linear forwards;
+}
+
+@keyframes shoot{
+  0%{
+    transform: translateY(0%);
+  }
+  25%{
+    transform: translateY(-480%) rotate(360deg);
+    width: 15%;
+    opacity: 1;
+  }
+  35%{
+    transform: translateY(-470%) rotate(420deg);
+    width: 13%;
+    opacity: 1;
+  }
+  45%{
+    opacity: .3;
+  }
+  50%{
+    transform: translateY(-400%) rotate(480deg);
+    width: 12%;
+    opacity: 0;
+  }
+  75%{
+    transform: translateY(0%) rotate(0deg);
+    opacity: 0;
+  }
 }
