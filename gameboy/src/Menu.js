@@ -9,17 +9,11 @@ export default function Menu() {
     const [game,setGame] = useState('');
     const [userName, setUserName] = useState('click to input your name')
 
-    function handleuserNameClick() {
-        if (userName==='click to input your name') { 
-          const inputName = prompt('Please enter your name:');
-          setUserName(inputName);
-        }
-      }
-
     const handleClick = (e)=>{
         const menu  = document.getElementById('menu')
         const option = document.getElementById('option')
         const games = document.getElementById('games')
+        const welcome = document.getElementById('welcome')
         console.log(e.target.id)
         if(e.target.id==='startBtn'){
             menu.classList.add('none')
@@ -35,12 +29,24 @@ export default function Menu() {
             menu.classList.add('none')
             option.classList.add('none')
             games.classList.add('none')
+            welcome.classList.remove('none')
+            welcome.classList.add('welcome')
+            menu.classList.remove('none')
+            option.classList.remove('none')
+            games.classList.remove('none')
+        }else if(e.target.id==='userName'){
+            const inputName = prompt('Please enter your name:');
+            setUserName(inputName);
+            welcome.classList.add('none')
         }
     }
   return (
     <div id='menuContainer'>
+        <div className='Welcome' id='welcome'>
+            <p id='userName' onClick={handleClick}>Click here to input User Name.</p>
+        </div>
         <div className='Menu' id='menu'>
-            <p id='userName' onClick={handleuserNameClick}>Welcome, {userName}!</p>
+            <p>Welcome, {userName}!</p>
             <h1>MENU</h1>
             <ul className='menuList'>
                 <li id='startBtn' onClick={handleClick}>Start</li>
