@@ -27,6 +27,7 @@ body,#root {
   --led: rgb(226,46,27);
   --screen: rgb(156,160,76);
   --textCol: rgb(51,44,96);
+  --screenTextCol: rgb(26, 26, 26);
 
   --font-size: calc(8px + 1.5vh);
 }
@@ -203,14 +204,14 @@ body,#root {
   width: 100%;
   height: 100%;
 }
-.Menu,.Option{
+.Menu,.Option,.Volume{
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: rgb(26, 26, 26);
+  color: var(--screenTextCol);
 }
 .Menu > h1{
   margin-top: 20%;
@@ -221,6 +222,31 @@ body,#root {
   margin-top: 20%;
   margin-bottom: 10%;
   font-size: clamp(18px, 4vh, 36px);
+}
+.Volume > h1{
+  margin-top: 20%;
+  margin-bottom: 10%;
+  font-size: clamp(18px, 4vh, 36px);
+}
+.volBtnContainer{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  /* background-color: #ff7676; */
+}
+.volBtnContainer > p{
+  font-size: var(--font-size);
+  color: var(--screenTextCol);
+  margin: 5%;
+  user-select: none;
+}
+#volDec:hover{
+  background-color: rgba(26, 26, 26, 0.877);
+  color: rgb(183, 189, 81);
+}
+#volInc:hover{
+  background-color: rgba(26, 26, 26, 0.877);
+  color: rgb(183, 189, 81);
 }
 .menuList,.optionList > li{
   font-size: 2.5vh;
@@ -238,6 +264,15 @@ body,#root {
   color: rgb(183, 189, 81);
 }
 
+.ExitVolBtn{
+  font-size: 2.5vh;
+  text-align: center;
+}
+.ExitVolBtn:hover{
+  background-color: rgba(26, 26, 26, 0.877);
+  color: rgb(183, 189, 81);
+}
+
 .Games{
   display: grid;
   width: 100%;
@@ -246,7 +281,7 @@ body,#root {
 }
 
 .Games > div{
-  /* background-color: #ff7676; */
+  /* background-color: #00cf1c; */
   margin: 5%;
 }
 
@@ -258,7 +293,6 @@ body,#root {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-
 }
 
 .Game1Container > div{
@@ -268,6 +302,19 @@ body,#root {
   justify-content: center;
   align-items: center;
 }
+.game{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.game > p{
+  color: var(--screenTextCol);
+}
+.game > *{
+  pointer-events: none;
+}
+
 .basketBallContainer{
   min-height: 32%;
 }
@@ -275,7 +322,20 @@ body,#root {
   font-size: var(--font-size);
   border: 2px dotted rgba(0, 0, 0, 0.8);
 }
-
+.healthContainer{
+  position: absolute;
+  height: 8%;
+  max-width: 7vh;
+  left: 17%;
+  bottom: 16%;
+  display: flex;
+  justify-content: start!important;
+}
+.healthContainer > div{
+  font-size: 0.1vh;
+  margin: 5%;
+  color: var(--screenTextCol);
+}
 .move{
   animation: move 5s linear infinite;
 }
@@ -328,4 +388,76 @@ body,#root {
     transform: translateY(0%) rotate(0deg);
     opacity: 0;
   }
+}
+
+.ikun{
+  width: 64.8%!important;
+  height: 70%;
+  background-color: var(--screen);
+  position: absolute;
+  z-index: 5;
+  overflow: hidden;
+  animation: fadeIn 1s forwards;
+  box-shadow: inset 0 0 13px #303030;
+}
+
+@keyframes fadeIn{
+  from{
+    opacity: 0;
+  }
+  to{
+    opacity: 1;
+  }
+}
+
+.gameOver{
+  position: absolute;
+  top: 10%;
+  font-size: var(--font-size);
+  color: var(--screenTextCol);
+}
+.tieSanKao{
+  width: 40%;
+  aspect-ratio: 1;
+  /* left: -20%; */
+  position: absolute;
+  top: 25%;
+  overflow: hidden;
+}
+.score{
+  position: absolute;
+  bottom: 20%;
+  color: var(--screenTextCol);
+  font-size: calc(4px + 1.5vh);
+}
+.xiaoheizi{
+  height: 100%;
+  animation: kao .8s steps(7) infinite;
+  mix-blend-mode: multiply; 
+}
+@keyframes kao {
+  0%{
+    transform: translate3d(0,0,0);
+  }
+  100%{
+    transform: translate3d(-100%,0,0);
+  }
+}
+.g1Img{
+  mix-blend-mode: multiply; 
+}
+
+.backBtn{
+  position: absolute;
+  bottom: 8%;
+  color: var(--screenTextCol);
+  font-size: calc(4px + 1.5vh);
+  width: 22%;
+  height: 10%;
+  text-align: center;
+}
+
+.backBtn:hover{
+  background-color: rgba(26, 26, 26, 0.877);
+  color: rgb(183, 189, 81);
 }
