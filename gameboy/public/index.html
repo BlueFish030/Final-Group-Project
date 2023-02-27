@@ -17,6 +17,25 @@
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root">
     </div>
-    
+    <audio id="clickAudio" src="./pickupCoin.wav"></audio>
+    <audio loop id="bgm">
+      <source src="./Funny_Bit.mp3" type="audio/mpeg">
+    </audio>
+    <script>
+      const clickAudio = document.getElementById('clickAudio')
+      const bgm = document.getElementById('bgm')
+      bgm.volume = 0.2;
+      const playAudio = ()=>{
+        bgm.play();
+        window.removeEventListener('click',playAudio)
+      }
+      window.addEventListener('click',playAudio)
+      window.addEventListener('keydown',()=>{
+        clickAudio.play();
+      })
+      window.addEventListener('click',()=>{
+        clickAudio.play();
+      })
+    </script>
   </body>
 </html>
