@@ -11,6 +11,8 @@ export default function Menu() {
     const [game,setGame] = useState('')
     const bgm = document.getElementById('bgm')
     const [vol,setVol] = useState(bgm.volume)
+    const [login,setLogin] = useState(false)
+    const [userN,setUserN] = useState(0)
 
     const handleClick = (e)=>{
         const menu  = document.getElementById('menu')
@@ -63,9 +65,32 @@ export default function Menu() {
         }
         console.log(bgm.volume)
     }
+
+    const handleChange = (e)=>{
+        setUserN(e.target.value);
+    }
+
+    const handleKeyDown = (e)=>{
+        if (e.code==='Enter') {
+            const userNameInput = document.getElementById('userNameInput')
+            const showUserName = document.getElementById('showUserName')
+            userNameInput.classList.add('none')
+            showUserName.innerText = 'Welcome, '+ userN +' !';
+            showUserName.classList.add('showUserName')
+            showUserName.addEventListener('animationend',()=>{
+                const login = document.getElementById('login')
+                login.classList.add('none')
+            })
+        }
+    }
     
   return (
     <div id='menuContainer'>
+        {!login&&
+        <div className='Login' id='login'>
+            <textarea id='userNameInput' type="text" required placeholder="What is your name?" onChange={handleChange} onKeyDown={handleKeyDown}></textarea>
+            <p id='showUserName'></p>
+        </div>}
         <div className='Menu' id='menu'>
             <h1>MENU</h1>
             <ul className='menuList'>

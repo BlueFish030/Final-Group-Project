@@ -204,7 +204,7 @@ body,#root {
   width: 100%;
   height: 100%;
 }
-.Menu,.Option,.Volume{
+.Menu,.Option,.Volume,.Login{
   width: 100%;
   height: 100%;
   display: flex;
@@ -212,6 +212,52 @@ body,#root {
   justify-content: center;
   align-items: center;
   color: var(--screenTextCol);
+}
+#userNameInput{
+  width: 80%;
+  height: 60%;
+  border: none;
+  background-color: var(--screen);
+  color: var(--screenTextCol);
+  font-family: 'Silkscreen', cursive;
+  font-size: 1.8vh;
+  text-align: center;
+  word-break: normal;
+}
+::placeholder{
+  color: var(--screenTextCol);
+  opacity: 1;
+}
+#userNameInput:focus{
+  outline: none;
+}
+.showUserName{
+  /* background-color: #ff7676; */
+  position: absolute;
+  overflow: hidden;
+  margin: 0;
+  white-space: nowrap;
+  top: 40%;
+  width: auto;
+  max-width: 60%;
+  height: auto;
+  color: var(--screenTextCol);
+  font-size: 1.8vh;
+  text-align: center;
+  word-break: normal;
+  pointer-events: none;
+  border-right: 2px solid var(--screenTextCol);
+  animation: 
+    typing 5s steps(40, end),
+    blink-caret 1s step-end infinite;
+}
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--screenTextCol); }
 }
 .Menu > h1{
   margin-top: 20%;
