@@ -6,7 +6,15 @@ import Game1 from './Game1'
 // import Game4 from './Game4'
 
 export default function Menu() {
-    const [game,setGame] = useState('')
+    const [game,setGame] = useState('');
+    const [userName, setUserName] = useState('click to input your name')
+
+    function handleuserNameClick() {
+        if (userName==='click to input your name') { 
+          const inputName = prompt('Please enter your name:');
+          setUserName(inputName);
+        }
+      }
 
     const handleClick = (e)=>{
         const menu  = document.getElementById('menu')
@@ -23,15 +31,21 @@ export default function Menu() {
         }else if(e.target.className==='game'){
             games.classList.add('none')
             setGame(e.target.id)
+        }else if(e.target.id==='logOut'){
+            menu.classList.add('none')
+            option.classList.add('none')
+            games.classList.add('none')
         }
     }
   return (
     <div id='menuContainer'>
         <div className='Menu' id='menu'>
+            <p id='userName' onClick={handleuserNameClick}>Welcome, {userName}!</p>
             <h1>MENU</h1>
             <ul className='menuList'>
                 <li id='startBtn' onClick={handleClick}>Start</li>
                 <li id='optionBtn' onClick={handleClick}>Option</li>
+                <li id='logOut' onClick={handleClick}>Log out</li>
             </ul>
         </div>
         <div className='Option' id='option'>
