@@ -551,3 +551,79 @@ body,#root {
   background-color: rgba(26, 26, 26, 0.877);
   color: rgb(183, 189, 81);
 }
+
+/*Rachel's part*/
+#inputNum{
+    width: 80%;
+    height: auto;
+    border: none;
+    background-color: var(--screen);
+    color: var(--screenTextCol);
+    font-family: 'Silkscreen', cursive;
+    font-size: 1.8vh;
+    text-align: center;
+    word-break: normal;
+    resize: none;
+  
+}
+  
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+  
+  
+#inputNum:focus{
+    outline: none;
+  
+}
+  
+.enter:hover{
+    background-color: rgba(26, 26, 26, 0.877);
+    color: rgb(183, 189, 81);
+}
+
+.g4BackBtn:hover{
+    background-color: rgba(26, 26, 26, 0.877);
+    color: rgb(183, 189, 81);
+}
+.restart:hover{
+    background-color: rgba(26, 26, 26, 0.877);
+    color: rgb(183, 189, 81);
+}
+  
+.Game4Container{
+    width: 100%;
+    height: 80%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    text-align: center;
+    color: var(--screenTextCol);
+}
+
+.g4EndBtns{
+    position: absolute;
+    width: 40%;
+    height: 15%;
+    bottom: 20%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.g4EndBtns > div{
+    margin: 1%;
+    width: 50%;
+    height: 50%;
+    text-align: center;
+    color: var(--screenTextCol);
+    font-size: calc(4px + 1.5vh);
+}
+
+#calImg{
+    width: 90%;
+    margin-left: 3%;
+}
