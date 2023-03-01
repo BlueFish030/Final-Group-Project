@@ -331,6 +331,50 @@ body,#root {
   margin: 5%;
 }
 
+.Game2Container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-content: stretch;
+}
+
+.Game2Container > button{
+  width: 16%;
+  height: 21px;
+  background-color: #db8521;
+}
+
+.Game2Container > div > button{
+  background-color: #db8521;
+  display: flex;
+  justify-content: center;
+}
+
+#g2replayButton{
+  width: 44%;
+  height: 21px;
+}
+
+#g2backButton{
+  width: 24%;
+  height: 21px;
+}
+
+.Game2Container > button:hover {
+  transform: translateY(-6px);
+  box-shadow: 2px 2px 6px 2px rgb(7, 18, 39);
+}
+.Game2Container > button:active {
+  transform: translateY(-6px) scale(.98);
+}
+
+#diceCupImg{
+  width: 100%;
+}
 
 .Game1Container{
   width: 100%;

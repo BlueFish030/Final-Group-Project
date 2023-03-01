@@ -1,10 +1,11 @@
 import React from 'react'
 import { useState } from 'react'
 import Game1 from './Game1'
-// import Game2 from './Game2'
+import Game2 from './Game2'
 // import Game3 from './Game3'
 // import Game4 from './Game4'
 import Game1pic from './Game1pic'
+import Game2pic from './Game2pic'
 
 
 export default function Menu() {
@@ -40,6 +41,9 @@ export default function Menu() {
             if(e.target.id==='game1'){
                 const game1  = document.getElementById('g1Container')
                 game1.classList.remove('none')
+            } else if (e.target.id==='game2'){
+                const game2  = document.getElementById('g2Container')
+                game2.classList.remove('none')
             }
         }
     }
@@ -117,13 +121,13 @@ export default function Menu() {
         </div>
         <div className='Games' id='games'>
             <div className='game' id='game1' onClick={handleClick}><Game1pic /><p>BasketBall</p></div>
-            <div className='game' id='game2' onClick={handleClick}>B</div>
+            <div className='game' id='game2' onClick={handleClick}><Game2pic /><p>Sic Bo</p></div>
             <div className='game' id='game3' onClick={handleClick}>c</div>
             <div className='game' id='game4' onClick={handleClick}>d</div>
         </div>
         {(game==='game1')&&<Game1 />}
-        {/* {(game==='game2')&&<Game2 />}
-        {(game==='game3')&&<Game3 />}
+        {(game==='game2')&&<Game2 />}
+        {/* {(game==='game3')&&<Game3 />}
         {(game==='game4')&&<Game4 />} */}
     </div>
   )
