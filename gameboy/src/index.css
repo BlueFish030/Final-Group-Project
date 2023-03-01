@@ -46,6 +46,12 @@ body,#root {
   overflow: hidden;
   /* transform: scale(1.2); */
   font-family: 'Oxanium', cursive;
+  box-shadow: 30px 30px 50px -20px rgba(0, 0, 0, 0.1),
+              inset 20px 20px 10px rgba(255, 255, 255, 0.5),
+              -20px -20px 40px rgba(255, 255, 255, 0.1),
+              inset 5px 5px 10px rgba(255, 255, 255, 1),
+              inset -15px -15px 20px rgba(0, 0, 0, 0.2),
+              inset -5px -5px 10px rgba(255, 255, 255, 0.8)
 }
 .line{
   position: absolute;
@@ -223,6 +229,7 @@ body,#root {
   font-size: 1.8vh;
   text-align: center;
   word-break: normal;
+  resize: none;
 }
 ::placeholder{
   color: var(--screenTextCol);

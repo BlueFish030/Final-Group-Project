@@ -1,10 +1,10 @@
 import React from 'react'
-import calculate from './calculate.png';
+import confused from './confused-math.gif';
 
-export default function Game2pic() {
+export default function Game4pic() {
   return (
     <div>
-        <img id='calImg' src={calculate} alt="Game4 picture" />
+        <img id='calImg' src={confused} alt="Game4 picture" />
     </div>
 
   )
