@@ -12,11 +12,11 @@ function Game2() {
     const menu = document.getElementById('menu');
     const option = document.getElementById('option');
     const games = document.getElementById('games');
-    const game3 = document.getElementById('g3Container');
+    const game2 = document.getElementById('g2Container');
     menu.classList.remove('none');
     option.classList.remove('none');
     games.classList.remove('none');
-    game3.classList.add('none');
+    game2.classList.add('none');
   }
 
   function rollDice() {
