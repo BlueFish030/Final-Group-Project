@@ -1,0 +1,59 @@
+*{
+    margin: 0px;
+    padding:0px;
+}
+
+main {
+    text-align: center;
+    vertical-align: center;
+  }
+
+  :root{
+    --mainTone: rgb(215,210,216);
+    --secTone: rgb(115,116,136);
+    --btnShadow: rgb(201,195,199);
+    --redBtn: rgb(111,1,25);
+    --darkBtn: rgb(5,2,5);
+    --grayBtn: rgb(154,148,161);
+    --led: rgb(226,46,27);
+    --screen: rgb(156,160,76);
+    --textCol: rgb(51,44,96);
+    --screenTextCol: rgb(26, 26, 26);
+  
+    --font-size: calc(8px + 1.5vh);
+  }
+
+  .mainBorder{
+    height: 140px;
+    border: 2px solid #000000;
+    
+  }
+  .timmer{
+    font-size:20px;
+    font-weight:bold;
+  }
+  
+  .showScore{
+    font-size:20px;
+    font-weight:bold;
+    
+  }
+  
+  .showStage{
+     font-size:20px;
+    font-weight:bold;
+  }
+  
+  .picture{
+    width: 70px;
+    height:auto;
+  }
+  .losePicture{
+      width: 70px;
+    height:70px;
+  }
+
+  .restartBtn:hover{
+     background-color: rgba(26, 26, 26, 0.877);
+  color: rgb(183, 189, 81);
+  }
