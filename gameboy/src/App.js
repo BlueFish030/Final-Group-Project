@@ -4,7 +4,7 @@ import Menu from "./Menu";
 function App() {
 
   return (
-    <div className="App">
+    <div className="App" id="app">
       <div className="line" id="line1"></div>
       <div className="line" id="line2"></div>
       <div className="line" id="line3"></div>
@@ -26,7 +26,7 @@ function App() {
         <div className="power">
           <div>BATTERY</div>
         </div>
-        <div className="container">
+        <div className="container" id="screen">
           <Menu />
         </div>
       </div>

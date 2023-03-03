@@ -13,7 +13,9 @@ import Game4pic from './Game4pic'
 export default function Menu() {
     const [game,setGame] = useState('')
     const bgm = document.getElementById('bgm')
+    const clickAudio = document.getElementById('clickAudio')
     const [vol,setVol] = useState(bgm.volume)
+    const [clickVol,setClickVol] = useState(clickAudio.volume)
     const [login,setLogin] = useState(false)
     const [userN,setUserN] = useState(0)
 
@@ -22,6 +24,8 @@ export default function Menu() {
         const option = document.getElementById('option')
         const games = document.getElementById('games')
         const volume = document.getElementById('volume')
+        const app = document.getElementById('app')
+        app.classList.add('scaleUp')
         // console.log(e.target.id)
         if(e.target.id==='startBtn'){
             menu.classList.add('none')
@@ -59,24 +63,32 @@ export default function Menu() {
 
     const handleIncVol = ()=>{
         const bgm = document.getElementById('bgm')
-        if(vol < 1){
+        const clickAudio = document.getElementById('clickAudio')
+        if(bgm.volume < 0.949){
             setVol(pre => pre + 0.05);
+            setClickVol(pre => pre + 0.05);
             bgm.volume += 0.05;
-        }else if(vol >= 1){
+            clickAudio.volume += 0.05;
+        }else if(bgm.volume >= 0.949){
             setVol(1);
+            setClickVol(1);
         }
-        console.log(bgm.volume)
+        // console.log(bgm.volume)
     }
 
     const handleDecVol = ()=>{
         const bgm = document.getElementById('bgm')
-        if(vol > 0){
+        const clickAudio = document.getElementById('clickAudio')
+        if(bgm.volume >= 0.05){
             setVol(pre => pre - 0.05);
+            setClickVol(pre => pre - 0.05);
             bgm.volume -= 0.05;
-        }else if(vol <= 0){
+            clickAudio.volume -= 0.05;
+        }else if(bgm.volume <= 0.049){
             setVol(0);
+            setClickVol(0);
         }
-        console.log(bgm.volume)
+        // console.log(bgm.volume)
     }
 
     const handleChange = (e)=>{
@@ -129,10 +141,10 @@ export default function Menu() {
             <div className='ExitVolBtn' id='exitVolBtn' onClick={handleClick}>Back</div>
         </div>
         <div className='Games' id='games'>
-            <div className='game' id='game1' onClick={handleClick}><Game1pic /><p>BasketBall</p></div>
-            <div className='game' id='game2' onClick={handleClick}><Game2pic /><p>Sic Bo</p></div>
-            <div className='game' id='game3' onClick={handleClick}><Game3pic /><p>Ryzme</p></div>
-            <div className='game' id='game4' onClick={handleClick}><Game4pic /><p>Guess Num</p></div>
+            <div className='game' id='game1' onClick={handleClick}><Game1pic /><p className='gameName'>BasketBall</p></div>
+            <div className='game' id='game2' onClick={handleClick}><Game2pic /><p className='gameName'>Sic Bo</p></div>
+            <div className='game' id='game3' onClick={handleClick}><Game3pic /><p className='gameName'>Ryzme</p></div>
+            <div className='game' id='game4' onClick={handleClick}><Game4pic /><p className='gameName'>Guess Num</p></div>
         </div>
         {(game==='game1')&&<Game1 />}
         {(game==='game2')&&<Game2 />}

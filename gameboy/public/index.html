@@ -24,7 +24,8 @@
     <script>
       const clickAudio = document.getElementById('clickAudio')
       const bgm = document.getElementById('bgm')
-      bgm.volume = 0.2;
+      bgm.volume = 0.05;
+      clickAudio.volume = 0.05;
       const playAudio = ()=>{
         bgm.play();
         window.removeEventListener('click',playAudio)
