@@ -10,15 +10,17 @@ import Stage5Picture from "./img/game05.gif";
 
 import Lose from "./img/fortnite-dance5.gif";
 
-var Q1 = ["🢃", "🢁", "🢀", "🢂"];
+const random = (array) => array.sort(() => 0.5 - Math.random());
 
-var Q2 = ["🢃", "🢁", "🢀", "🢂", "🢀", "🢁"];
+var Q1 = random(["🢃", "🢁", "🢀", "🢂"]);
 
-var Q3 = ["🢃", "🢁", "🢀", "🢂", "🢀", "🢃", "🢃", "🢁", "🢁"];
+var Q2 = random(["🢃", "🢁", "🢀", "🢂", "🢀", "🢁"]);
 
-var Q4 = ["🢃", "🢁", "🢀", "🢂", "🢀", "🢃", "🢂", "🢀", "🢂", "🢀", "🢃", "🢂"];
+var Q3 = random(["🢃", "🢁", "🢀", "🢂", "🢀", "🢃", "🢃", "🢁", "🢁"]);
 
-var Q5 = ["🢃", "🢁", "🢀", "🢂", "🢀", "🢃", "🢂", "🢃", "🢃", "🢁", "🢀", "🢂", "🢀", "🢃", "🢂", "🢃", "🢃", "🢁",];
+var Q4 = random(["🢃", "🢁", "🢀", "🢂", "🢀", "🢃", "🢂", "🢀", "🢂", "🢀", "🢃", "🢂"]);
+
+var Q5 = random(["🢃", "🢁", "🢀", "🢂", "🢀", "🢃", "🢂", "🢃", "🢃", "🢁", "🢀", "🢂", "🢀", "🢃", "🢂", "🢃", "🢃", "🢁",]);
 
 function Game3() {
 
@@ -33,7 +35,7 @@ function Game3() {
   const [showPicture5, setshowPicture5] = useState(false)
   const [showLose, setshowLose] = useState(false)
   const [restartGame, setRestartGame] = useState(false)
-  const [gameOver,setGameOver] = useState(false);
+  
 
   useEffect(() => {
     document.addEventListener('keyup', enter);
@@ -58,7 +60,6 @@ function Game3() {
       }
     }
 
-
     if (question == 4) {
       document.addEventListener('keyup', stage4);
       return () => {
@@ -75,12 +76,11 @@ function Game3() {
 
   });
 
-  const [counter, setCounter] = React.useState(10);
+  // const [counter, setCounter] = React.useState(10);
 
-  React.useEffect(() => {
-    counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
-  }, [counter]);
-
+  // React.useEffect(() => {
+  //   counter > 0 && setTimeout(() => setCounter(counter - 1), 1000);
+  // }, [counter]);
 
   //   useEffect(() => {
   //   if (question == 5) {
@@ -92,98 +92,87 @@ function Game3() {
   // });
 
 
+
   //stage 1
   function enter(event) {
 
     if (event.code === "KeyW" && Q1[0] === "🢁") {
-      Q1.shift();
+      
       setSorce(score + 1);
     }
-    if (event.code === "KeyS" && Q1[0] === "🢃") {
-      Q1.shift();
+    else if (event.code === "KeyS" && Q1[0] === "🢃") {
+    
       setSorce(score + 1);
     }
-    if (event.code === "KeyA" && Q1[0] === "🢀") {
-      Q1.shift();
+    else if (event.code === "KeyA" && Q1[0] === "🢀") {
+  
       setSorce(score + 1);
     }
-    if (event.code === "KeyD" && Q1[0] === "🢂") {
-      Q1.shift();
+    else if (event.code === "KeyD" && Q1[0] === "🢂") {
       setSorce(score + 1);
-    }
-    if (event.code !== "KeyD"
-      && event.code !== "KeyW"
-      && event.code !== "KeyS"
-      && event.code !== "KeyA"
-       
-       ) {
-      Q1.shift();
-      console.log(Q1)
+      
+    } else{
+      currentQuestion.shift();
+      console.log(currentQuestion)
     }
 
+   
+  
     if (Q1.length === 0 && score >= 2) {
       
-      Q1.push("٩(◦`꒳´◦)۶")
+      Q1.push("٩(◦`꒳´◦)۶","stage1","Finish")
       setSorce(0)
       setCurrentQuestion(Q2)
       setQuestion(2);
-      setCounter(10);
+      //setCounter(10);
       setshowPicture1(true);
     }
 
     else if (Q1.length == 0 && score <= 2) {
-      Q1.push("٩(◦`꒳´◦)۶");
+      Q1.push("٩(◦`꒳´◦)۶","stage1","Finish");
       setshowLose(true);
       // location.reload();
     }
+
+
   }
 
   //stage 2
   function stage2(e) {
-   
-   
+  
     if (e.code === "KeyW" && Q2[0] === "🢁") {
-      Q2.shift();
       setSorce(score + 1);
     }
-    if (e.code === "KeyS" && Q2[0] === "🢃") {
-      Q2.shift();
+    else if (e.code === "KeyS" && Q2[0] === "🢃") {
       setSorce(score + 1);
     }
-    if (e.code === "KeyA" && Q2[0] === "🢀") {
-      Q2.shift();
+    else if (e.code === "KeyA" && Q2[0] === "🢀") {
       setSorce(score + 1);
     }
-    if (e.code === "KeyD" && Q2[0] === "🢂") {
-      Q2.shift();
+    else if (e.code === "KeyD" && Q2[0] === "🢂") {
       setSorce(score + 1);
     }
-    if (e.code !== "KeyS"
-      && e.code !== "KeyW"
-      && e.code !== "KeyD"
-      && e.code !== "KeyA") {
-      Q2.shift();
-    }
+
+    currentQuestion.shift();
+
     if (Q2.length === 0 && score >= 4) {
       setshowPicture1(false);
-      Q2.push("٩(◦`꒳´◦)۶")
+      Q2.push("٩(◦`꒳´◦)۶","stage2","Finish")
       setshowPicture2(true);
       setSorce(0)
       setCurrentQuestion(Q3)
       setQuestion(3)
 
-      //stage4()
 
     } else if (Q2.length === 0 && score <= 3) {
       setshowPicture1(false);
-      Q2.push("٩(◦`꒳´◦)۶")
+      Q2.push("٩(◦`꒳´◦)۶","stage2","Finish")
       setshowLose(true);
     }
   }
   //stage 3
 
-
-  // function stage3() {
+  // stage3()
   function stage3(e) {
      
 
@@ -211,17 +200,15 @@ function Game3() {
     }
     if (Q3.length === 0 && score >= 2) {
         setshowPicture2(false)
-      Q3.push("٩(◦`꒳´◦)۶")
+      Q3.push("٩(◦`꒳´◦)۶","stage3","Finish")
       setSorce(0)
       setshowPicture3(true)
       setCurrentQuestion(Q4)
       setQuestion(4)
 
-      //stage4()
-
     } else if (Q3.length === 0 && score <= 2) {
         setshowPicture2(false)
-      Q3.push("٩(◦`꒳´◦)۶")
+      Q3.push("٩(◦`꒳´◦)۶","stage3","Finish")
       setshowLose(true);
     }
   }
@@ -229,7 +216,6 @@ function Game3() {
   //stage 4
   function stage4(e) {
     
-
     if (e.code === "KeyW" && Q4[0] === "🢁") {
       Q4.shift();
       setSorce(score + 1);
@@ -246,25 +232,18 @@ function Game3() {
       Q4.shift();
       setSorce(score + 1);
     }
-    if (e.code !== "KeyS"
-      && e.code !== "KeyW"
-      && e.code !== "KeyD"
-      && e.code !== "KeyA") {
-      Q4.shift();
-    }
+
     if (Q4.length === 0 && score >= 10) {
         setshowPicture3(false)
-      Q4.push("٩(◦`꒳´◦)۶")
+      Q4.push("٩(◦`꒳´◦)۶","stage4","Finish")
       setSorce(0)
       setshowPicture4(true)
       setCurrentQuestion(Q5)
       setQuestion(5)
-      
-
 
     } else if (Q4.length === 0 && score <= 9) {
         setshowPicture3(false)
-      Q4.push("٩(◦`꒳´◦)۶")
+      Q4.push("٩(◦`꒳´◦)۶","stage4","Finish")
       setshowLose(true);
     }
   }
@@ -287,12 +266,7 @@ function Game3() {
       Q5.shift();
       setSorce(score + 1);
     }
-    if (e.code !== "KeyS"
-      && e.code !== "KeyW"
-      && e.code !== "KeyD"
-      && e.code !== "KeyA") {
-      Q5.shift();
-    }
+
     if (Q5.length === 0 && score >= 12) {
         setshowPicture4(false)
         setshowPicture5(true)
@@ -308,15 +282,15 @@ function Game3() {
   }
 
   function restart(){
-    Q1 = ["🢃", "🢁", "🢀", "🢂"];
+    Q1 = random(["🢃", "🢁", "🢀", "🢂"]);
 
-    Q2 = ["🢃", "🢁", "🢀", "🢂", "🢀", "🢁"];
+    Q2 = random(["🢃", "🢁", "🢀", "🢂", "🢀", "🢁"]);
 
-    Q3 = ["🢃", "🢁", "🢀", "🢂", "🢀", "🢃", "🢃", "🢁", "🢁"];
+    Q3 = random(["🢃", "🢁", "🢀", "🢂", "🢀", "🢃", "🢃", "🢁", "🢁"]);
 
-    Q4 = ["🢃", "🢁", "🢀", "🢂", "🢀", "🢃", "🢂", "🢀", "🢂", "🢀", "🢃", "🢂"];
+    Q4 = random(["🢃", "🢁", "🢀", "🢂", "🢀", "🢃", "🢂", "🢀", "🢂", "🢀", "🢃", "🢂"]);
 
-    Q5 = ["🢃", "🢁", "🢀", "🢂", "🢀", "🢃", "🢂", "🢃", "🢃", "🢁", "🢀", "🢂", "🢀", "🢃", "🢂", "🢃", "🢃", "🢁",];
+    Q5 = (["🢃", "🢁", "🢀", "🢂", "🢀", "🢃", "🢂", "🢃", "🢃", "🢁", "🢀", "🢂", "🢀", "🢃", "🢂", "🢃", "🢃", "🢁",]);
 
   setSorce(0)
   setCurrentQuestion(Q1)
@@ -344,7 +318,6 @@ function Game3() {
     games.classList.remove('none');
     game3.classList.add('none');
     
-
   }
 
   return (
@@ -390,7 +363,6 @@ function Game3() {
         <div className='restartBtn'onClick={restart} >Restart </div>
         <div className='restartBtn'onClick={menu} >Back to Menu </div>
         <img className='picture' src={Stage5Picture} /> 
-        
         </>
       }
       
@@ -400,7 +372,6 @@ function Game3() {
         <div className='restartBtn'onClick={restart} >Press Restart </div>
         <div className='restartBtn'onClick={menu} >Back to Menu </div>
           <img className='losePicture' src={Lose} />
-        
         </div>
       }
         
