@@ -25,9 +25,9 @@ export default function Menu() {
         const games = document.getElementById('games')
         const volume = document.getElementById('volume')
         const app = document.getElementById('app')
-        app.classList.add('scaleUp')
         // console.log(e.target.id)
         if(e.target.id==='startBtn'){
+            app.classList.add('scaleUp')
             menu.classList.add('none')
             option.classList.add('none')
             volume.classList.add('none')

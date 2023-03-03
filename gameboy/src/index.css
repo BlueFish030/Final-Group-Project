@@ -646,8 +646,17 @@ input[type="number"]::-webkit-inner-spin-button {
 
 /*something new*/
 .scaleUp{
-  transform: scale(2);
-  top: 48%;
+  animation: scaleUp 1s forwards;
+}
+@keyframes scaleUp {
+  from{
+    transform: scale(1);
+    top: 0;
+  }
+  to{
+    transform: scale(2);
+    top: 48%;
+  }
 }
 
 #danceImg{
