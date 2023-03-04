@@ -112,7 +112,7 @@ function Game3() {
 
   //stage 2
   function stage2(e) {
-    console.log(currentQuestion)
+    // console.log(currentQuestion)
     if (e.code === "KeyW" && currentQuestion[0] === "🢁") {
       setSorce(score + 1);
     }
@@ -145,19 +145,19 @@ function Game3() {
   function stage3(e) {
     if (e.code === "KeyW" && currentQuestion[0] === "🢁") {
       setSorce(score + 1);
-      console.log('right')
+      // console.log('right')
     }
     if (e.code === "KeyS" && currentQuestion[0] === "🢃") {
       setSorce(score + 1);
-      console.log('right')
+      // console.log('right')
     }
     if (e.code === "KeyA" && currentQuestion[0] === "🢀") {
       setSorce(score + 1);
-      console.log('right')
+      // console.log('right')
     }
     if (e.code === "KeyD" && currentQuestion[0] === "🢂") {
       setSorce(score + 1);
-      console.log('right')
+      // console.log('right')
     }
     currentQuestion.shift();
     setWhatever(prev => prev +1)

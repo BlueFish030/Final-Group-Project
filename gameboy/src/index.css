@@ -712,7 +712,7 @@ input[type="number"]::-webkit-inner-spin-button {
   100%{
     top: 30%;
     left: -35%;
-    opacity: .5;
+    opacity: .6;
   }
 }
 
@@ -734,7 +734,7 @@ input[type="number"]::-webkit-inner-spin-button {
   100%{
     top: 30%;
     right: -28%;
-    opacity: .5;
+    opacity: .6;
   }
 }
 
@@ -743,24 +743,24 @@ input[type="number"]::-webkit-inner-spin-button {
   height: auto;
   position: absolute;
   aspect-ratio: 1;
-  background: linear-gradient(rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 40%);
+  background: linear-gradient(rgba(255, 255, 255, 1)-20%, rgba(0, 0, 0, 0) 40%);
   border-radius: 50%;
   opacity: 0;
 }
 
 .pressEffect-up{
   rotate: 0deg;
-  opacity: 1;
+  opacity: 1!important;
 }
 .pressEffect-down{
   rotate: 180deg;
-  opacity: 1;
+  opacity: 1!important;
 }
 .pressEffect-right{
   rotate: 90deg;
-  opacity: 1;
+  opacity: 1!important;
 }
 .pressEffect-left{
   rotate: -90deg;
-  opacity: 1;
+  opacity: 1!important;
 }

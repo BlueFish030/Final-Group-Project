@@ -1,6 +1,24 @@
 import { useState } from "react";
 import Menu from "./Menu";
 
+setTimeout(()=>{
+  const pressEffect = document.getElementById('pressEffect')
+  window.addEventListener('keyup',()=>{
+    pressEffect.className = ''
+  })
+  window.addEventListener('keydown',(e)=>{
+    if(e.code==='KeyW'){
+      pressEffect.classList.add('pressEffect-up')
+    }else if(e.code==='KeyS'){
+      pressEffect.classList.add('pressEffect-down')
+    }else if(e.code==='KeyA'){
+      pressEffect.classList.add('pressEffect-left')
+    }else if(e.code==='KeyD'){
+      pressEffect.classList.add('pressEffect-right')
+    }
+  })
+},500)
+
 function App() {
 
   return (
@@ -11,7 +29,7 @@ function App() {
       <div className="darkBtnContainer" id="darkBtnC">
         <div className="dirBtn" id="topDownBtn"></div>
         <div className="dirBtn" id="rightLeftBtn"></div>
-        <div className="pressEffect-up" id="pressEffect"></div>
+        <div id="pressEffect"></div>
       </div>
       <div className="redBtnContainer" id="redBtnc">
         <div className="baBtn" id="bBtn"><p>B</p></div>
