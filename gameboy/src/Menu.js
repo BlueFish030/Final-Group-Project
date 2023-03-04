@@ -25,12 +25,16 @@ export default function Menu() {
         const games = document.getElementById('games')
         const volume = document.getElementById('volume')
         const app = document.getElementById('app')
+        const darkBtnC = document.getElementById('darkBtnC')
+        const redBtnc = document.getElementById('redBtnc')
         // console.log(e.target.id)
         if(e.target.id==='startBtn'){
             app.classList.add('scaleUp')
             menu.classList.add('none')
             option.classList.add('none')
             volume.classList.add('none')
+            darkBtnC.classList.add('scaleUpDarkBtn')
+            redBtnc.classList.add('scaleUpRedBtn')
         }else if(e.target.id==='optionBtn'){
             menu.classList.add('none')
         }else if(e.target.id==='volumeBtn'){
@@ -53,6 +57,11 @@ export default function Menu() {
             }else if(e.target.id==='game4'){
                 const game4  = document.getElementById('g4Container')
                 game4.classList.remove('none')
+                const g4h3 = document.getElementById('g4h3');
+                const g4h5 = document.getElementById('g4h5');
+                g4h3.classList.remove('none');
+                g4h5.classList.remove('none');
+                document.getElementById('inputNum').disabled = false;
             }
             else if(e.target.id==='game3'){
                 const game3  = document.getElementById('g3Container')

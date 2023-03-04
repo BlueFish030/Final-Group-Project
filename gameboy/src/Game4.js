@@ -37,7 +37,12 @@ export default function Game4() {
         if (inputNum === answer) {
           setStatus("You Got It!!");
           setInputNum("");
-          setGameOver(true)
+          setGameOver(true);
+          const g4h3 = document.getElementById('g4h3');
+          const g4h5 = document.getElementById('g4h5');
+          g4h3.classList.add('none');
+          g4h5.classList.add('none');
+          document.getElementById('inputNum').disabled = true;
           return;
         }
       }
@@ -52,6 +57,11 @@ export default function Game4() {
     setStatus("  ");
     setAnswer(Math.floor(Math.random() * 29 + 2));
     setGameOver(false);
+    const g4h3 = document.getElementById('g4h3');
+    const g4h5 = document.getElementById('g4h5');
+    g4h3.classList.remove('none');
+    g4h5.classList.remove('none');
+    document.getElementById('inputNum').disabled = false;
   };
 
 
@@ -77,14 +87,14 @@ export default function Game4() {
   return (
     <div className='Game4Container' id='g4Container'>
       <h1>Guess Number</h1>
-          <h3>{status}</h3>
-        {status === "You Got It!!" && <h1>{answer}</h1>}
+          <h3 id="g4h1h3">{status}</h3>
+        {status === "You Got It!!" && <h1 id="g4ans">{answer}</h1>}
       
-        <h3>RANGE : {guessRange[0]} - {guessRange[1]}</h3>
+        <h3 id="g4h3">RANGE : {guessRange[0]} - {guessRange[1]}</h3>
         
-        <h5>Guest a number:{/* {inputNum} */}</h5>
+        <h5 id="g4h5">Guest a number:{/* {inputNum} */}</h5>
       
-        <input id='inputNum' type="number" min="1" max="30" value={inputNum} onChange={handleInput} 
+        <input id='inputNum' type="number" min="1" autoFocus max="30" value={inputNum} onChange={handleInput} 
         onKeyDown={handleKeyDown} />
 
         

@@ -43,7 +43,7 @@ body,#root {
   background-color: var(--mainTone);
   position: relative;
   border-radius: 20px 20px 120px 20px;
-  overflow: hidden;
+  /* overflow: hidden; */
   /* transform: scale(1.2); */
   font-family: 'Oxanium', cursive;
   box-shadow: 30px 30px 50px -20px rgba(0, 0, 0, 0.1),
@@ -51,7 +51,7 @@ body,#root {
               -20px -20px 40px rgba(255, 255, 255, 0.1),
               inset 5px 5px 10px rgba(255, 255, 255, 1),
               inset -15px -15px 20px rgba(0, 0, 0, 0.2),
-              inset -5px -5px 10px rgba(255, 255, 255, 0.8)
+              inset -5px -5px 10px rgba(255, 255, 255, 0.8);
 }
 .line{
   position: absolute;
@@ -73,7 +73,7 @@ body,#root {
   height: 4.22%;
   right: 7%;
 }
-.barkBtnContainer{
+.darkBtnContainer{
   width: 30%;
   height: auto;
   aspect-ratio: 1;
@@ -87,6 +87,7 @@ body,#root {
   align-items: center;
   box-shadow: inset 0 0 8px #30303031
 }
+
 .dirBtn{
   height: 80%;
   width: 30%;
@@ -570,9 +571,10 @@ body,#root {
 
 /*Rachel's part*/
 #inputNum{
-    width: 80%;
+    width: 60%;
     height: auto;
     border: none;
+    border-bottom: 1px solid var(--screenTextCol);
     background-color: var(--screen);
     color: var(--screenTextCol);
     font-family: 'Silkscreen', cursive;
@@ -593,6 +595,10 @@ input[type="number"]::-webkit-inner-spin-button {
 #inputNum:focus{
     outline: none;
   
+}
+#g4ans{
+  position: absolute;
+  top: 50%;
 }
   
 .enter:hover{
@@ -644,7 +650,6 @@ input[type="number"]::-webkit-inner-spin-button {
     margin-left: 3%;
 }
 
-/*something new*/
 .scaleUp{
   animation: scaleUp 1s forwards;
 }
@@ -676,4 +681,86 @@ input[type="number"]::-webkit-inner-spin-button {
   .gameName {
     transform: scale(0.5);
   }
+}
+/*something new*/
+#g4h3{
+  width: 100%;
+}
+#g4h1h3{
+  width: 100%;
+}
+
+.showScore::first-letter{
+  font-size: 1.5rem;
+}
+
+.scaleUpDarkBtn{
+  animation: scaleUpDarkBtn 1s ease-in-out forwards;
+}
+
+@keyframes scaleUpDarkBtn{
+  0%{
+    top: 60%;
+    left: 10%;
+    opacity: 1;
+  }
+  50%{
+    top: 45%;
+    left: -15%;
+    opacity: 0;
+  }
+  100%{
+    top: 30%;
+    left: -35%;
+    opacity: .5;
+  }
+}
+
+.scaleUpRedBtn{
+  animation: scaleUpRedBtn 1s ease-in-out forwards;
+}
+
+@keyframes scaleUpRedBtn{
+  0%{
+    top: 58%;
+    right: 15%;
+    opacity: 1;
+  }
+  50%{
+    top: 45%;
+    right: -15%;
+    opacity: 0;
+  }
+  100%{
+    top: 30%;
+    right: -28%;
+    opacity: .5;
+  }
+}
+
+#pressEffect{
+  width: 100%;
+  height: auto;
+  position: absolute;
+  aspect-ratio: 1;
+  background: linear-gradient(rgba(255, 255, 255, 1), rgba(0, 0, 0, 0) 40%);
+  border-radius: 50%;
+  opacity: 0;
+}
+
+.pressEffect-up{
+  rotate: 0deg;
+  opacity: 1;
+}
+.pressEffect-down{
+  rotate: 180deg;
+  opacity: 1;
+}
+.pressEffect-right{
+  rotate: 90deg;
+  opacity: 1;
+}
+.pressEffect-left{
+  rotate: -90deg;
+  opacity: 1;
 }

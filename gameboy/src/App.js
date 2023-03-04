@@ -8,11 +8,12 @@ function App() {
       <div className="line" id="line1"></div>
       <div className="line" id="line2"></div>
       <div className="line" id="line3"></div>
-      <div className="barkBtnContainer">
+      <div className="darkBtnContainer" id="darkBtnC">
         <div className="dirBtn" id="topDownBtn"></div>
         <div className="dirBtn" id="rightLeftBtn"></div>
+        <div className="pressEffect-up" id="pressEffect"></div>
       </div>
-      <div className="redBtnContainer">
+      <div className="redBtnContainer" id="redBtnc">
         <div className="baBtn" id="bBtn"><p>B</p></div>
         <div className="baBtn" id="aBtn"><p>A</p></div>
       </div>      
