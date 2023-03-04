@@ -3,8 +3,10 @@ import Menu from "./Menu";
 
 setTimeout(()=>{
   const pressEffect = document.getElementById('pressEffect')
+  const pressEffectA = document.getElementById('pressEffectA')
   window.addEventListener('keyup',()=>{
-    pressEffect.className = ''
+    pressEffect.className = '';
+    pressEffectA.className = '';
   })
   window.addEventListener('keydown',(e)=>{
     if(e.code==='KeyW'){
@@ -15,6 +17,8 @@ setTimeout(()=>{
       pressEffect.classList.add('pressEffect-left')
     }else if(e.code==='KeyD'){
       pressEffect.classList.add('pressEffect-right')
+    }else if(e.code==='Enter'){
+      pressEffectA.classList.add('pressEffectA')
     }
   })
 },500)
@@ -33,7 +37,8 @@ function App() {
       </div>
       <div className="redBtnContainer" id="redBtnc">
         <div className="baBtn" id="bBtn"><p>B</p></div>
-        <div className="baBtn" id="aBtn"><p>A</p></div>
+        <div className="baBtn" id="aBtn"><p>A</p>
+        <div id="pressEffectA"></div></div>
       </div>      
       <div className="longBtn" id="selectBtn">
         <p>SELECT</p>

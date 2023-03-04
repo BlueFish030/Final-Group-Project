@@ -122,7 +122,7 @@ export default function Menu() {
     <div id='menuContainer'>
         {!login&&
         <div className='Login' id='login'>
-            <textarea id='userNameInput' type="text" required placeholder="What is your name?" spellCheck="false" onChange={handleChange} onKeyDown={handleKeyDown}></textarea>
+            <textarea id='userNameInput' type="text" required autoFocus placeholder="What is your name?" spellCheck="false" onChange={handleChange} onKeyDown={handleKeyDown}></textarea>
             <p id='showUserName'></p>
         </div>}
         <div className='Menu' id='menu'>
