@@ -11,10 +11,13 @@ export default function Game1() {
   const [gameOver,setGameOver] = useState(false);
 
   useEffect(()=>{
-    window.addEventListener('keyup', handleShoot);
+    window.addEventListener('keyup', (e)=>{
+      const game1  = document.getElementById('g1Container')
+      if(game1!==null){
+        handleShoot(e);
+      }
+    });
   },[])
-
-  
 
   useEffect(()=>{
     if(life<=0){

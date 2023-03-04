@@ -348,6 +348,7 @@ body,#root {
   white-space: nowrap;
 }
 
+/* css - start of game2 */
 .Game2Container{
   width: 100%;
   height: 100%;
@@ -359,7 +360,7 @@ body,#root {
   align-content: stretch;
 }
 
-.Game2Container > button{
+.Game2Container  > #g2c2 >  button{
   width: 16%;
   height: 21px;
   background-color: #db8521;
@@ -372,26 +373,63 @@ body,#root {
 }
 
 #g2replayButton{
-  width: 44%;
+  width: 25%;
   height: 21px;
 }
 
 #g2backButton{
-  width: 24%;
+  width: 15%;
   height: 21px;
 }
 
-.Game2Container > button:hover {
+.Game2Container  > #g2c2 > button:hover {
   transform: translateY(-6px);
   box-shadow: 2px 2px 6px 2px rgb(7, 18, 39);
 }
-.Game2Container > button:active {
+
+.Game2Container  > #g2c2 > button:active {
   transform: translateY(-6px) scale(.98);
 }
 
 #diceCupImg{
   width: 100%;
 }
+
+.diceIcon{
+ color: #2c0338;
+}
+
+#arrowImg{
+  width: 5%;
+}
+
+#betAmountInput{
+  width: 16%;
+  background-color: #db8521;
+  text-align: center;
+}
+
+#g2c3 {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+  align-content: space-around;
+}
+
+#g2c2{
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#g2c1{
+  width: 95%;
+  display: flex;
+  flex-direction: column;
+}
+/* css - end of game2 */
 
 .Game1Container{
   width: 100%;
