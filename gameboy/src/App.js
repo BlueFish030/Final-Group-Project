@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Menu from "./Menu";
+import MuteVolume from "./MuteVolume";
+import HighVolume from "./HighVolume"
 
 setTimeout(()=>{
   const pressEffect = document.getElementById('pressEffect')
@@ -27,6 +29,8 @@ function App() {
 
   return (
     <div className="App" id="app">
+      <MuteVolume />
+      <HighVolume />
       <div className="line" id="line1"></div>
       <div className="line" id="line2"></div>
       <div className="line" id="line3"></div>
