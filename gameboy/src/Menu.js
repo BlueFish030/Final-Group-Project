@@ -50,22 +50,37 @@ export default function Menu() {
             setGame(e.target.id)
             if(e.target.id==='game1'){
                 const game1  = document.getElementById('g1Container')
-                game1.classList.remove('none')
+                if(game1!==null){
+                    game1.classList.remove('none')
+                }
             } else if (e.target.id==='game2'){
                 const game2  = document.getElementById('g2Container')
-                game2.classList.remove('none')
+                if(game2!==null){
+                    game2.classList.remove('none')
+                }
             }else if(e.target.id==='game4'){
                 const game4  = document.getElementById('g4Container')
-                game4.classList.remove('none')
                 const g4h3 = document.getElementById('g4h3');
                 const g4h5 = document.getElementById('g4h5');
-                g4h3.classList.remove('none');
-                g4h5.classList.remove('none');
-                document.getElementById('inputNum').disabled = false;
+                const inputNum = document.getElementById('inputNum');
+                if(game4!==null){
+                    game4.classList.remove('none')
+                }
+                if(g4h3!==null){
+                    g4h3.classList.remove('none')
+                }
+                if(g4h5!==null){
+                    g4h5.classList.remove('none')
+                }
+                if(inputNum!==null){
+                    inputNum.disabled = false;
+                }
             }
             else if(e.target.id==='game3'){
                 const game3  = document.getElementById('g3Container')
-                game3.classList.remove('none')
+                if(game3!==null){
+                    game3.classList.remove('none')
+                }
             }
         }
     }

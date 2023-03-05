@@ -43,8 +43,10 @@ export default function Game1() {
         setLife(prev => prev - 1);
         if(health.childNodes.length>0){
           var c = health.firstElementChild
-          health.removeChild(c)
-          c = health.firstElementChild
+          if(health!==null){
+            health.removeChild(c)
+            c = health.firstElementChild
+          }
         }
       }
       ball.addEventListener('animationend',()=>{

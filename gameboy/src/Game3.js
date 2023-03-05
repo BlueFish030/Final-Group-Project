@@ -257,7 +257,9 @@ function Game3() {
     menu.classList.remove('none');
     option.classList.remove('none');
     games.classList.remove('none');
-    game3.classList.add('none');
+    if(game3!==null){
+      game3.classList.add('none');
+    }
   }
   return (
     <main>
